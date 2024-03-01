@@ -1,0 +1,86 @@
+ 
+.container-fluid {
+    padding-right: 15px;
+    padding-left: 15px;
+    margin-right: auto;
+    margin-left: auto;
+}
+.navbar-brand {
+    padding: 0.5rem 1rem;
+    font-size: 1.25rem;
+    line-height: inherit;
+}
+.code {
+    border-radius: 20px;
+    border: solid 1px;
+    padding: 10px;
+    margin: 20px auto;
+    max-width: 600px;
+    box-sizing: border-box; /* Ensure padding is included in the width */
+    width: 80%; /* Adjusted width for screens wider than 767px */
+    
+}
+.create {
+    width: calc(100% - 20px); /* Adjusted width for input field */
+    margin-bottom: 15px;
+    height: 7vh;
+    padding: 5px 10px; /* Added padding for a better visual */
+    box-sizing: border-box; /* Ensures padding is included in the width */
+}
+h3 {
+    margin-top: 15px;
+}
+
+b {
+    text-align: center;
+}
+
+ul {
+    padding-left: 0;
+    text-align: center;
+}
+.list-item {
+    margin-bottom: 10px;
+}
+input:hover::placeholder {
+    position: initial;
+    border-bottom: 1px solid blue;
+    top: 0;
+    left: 0;
+    color: purple;
+    font-size: 12px;
+}
+@media (max-width: 767px) {
+    .navbar-brand {
+        font-size: 1rem;
+    }
+
+    .btn-outline-primary {
+        font-size: 0.875rem;
+    }
+    .code {
+        width:90%;
+    }
+
+    .create {
+        width: 100%;
+    }
+
+}
+
+@media (max-width: 519px) {
+    .navbar-brand {
+        font-size: 0.875rem;
+    }
+
+    .btn-outline-primary {
+        font-size: 0.75rem;
+    }
+    .code {
+        width: 100%; /* Adjusted width for screens smaller than 519px */
+    }
+}
+
+
+
+

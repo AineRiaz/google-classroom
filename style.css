@@ -1,0 +1,388 @@
+
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+ 
+}
+
+.sidebar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 260px;
+  background-color: white;
+  z-index: 50;
+  transition: all 0.5s ease;
+}
+
+.sidebar.close {
+  width: 78px;
+}
+
+.sidebar .nav-list {
+  height: 100%;
+  padding: 30px 0 150px 0;
+  overflow:auto;
+}
+
+.sidebar.close .nav-list {
+  overflow: visible;
+}
+
+.sidebar .nav-list::-webkit-scrollbar {
+  display: none;
+}
+
+.sidebar .nav-list li {
+  position: relative;
+  list-style: none;
+  transition: all 0.4s ease;
+}
+
+.sidebar .nav-list li:hover {
+  background-color: rgb(208, 231, 240);
+  border-radius: 0px 20px 20px 0px;
+  border: 1px solid blue;
+}
+
+.sidebar .nav-list li .icon-link {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.sidebar.close .nav-list li .icon-link {
+  display: block;
+}
+
+.sidebar .nav-list li i {
+  height: 50px;
+  min-width: 78px;
+  text-align: center;
+  line-height: 50px;
+  color: black;
+  font-size: 20px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.sidebar.close .nav-list li i.arrow {
+  display: none;
+}
+
+.sidebar .nav-list li.show i.arrow {
+  transform: rotate(-180deg);
+}
+
+.sidebar .nav-list li a {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+}
+
+.sidebar .nav-list li a .link-name {
+  color: black;
+  font-size: 18px;
+  font-weight: 400;
+  transition: all 0.4s ease;
+}
+
+.sidebar.close .nav-list li a .link-name {
+  opacity: 0;
+  pointer-events: none;
+}
+
+.sidebar .nav-list li .sub-menu {
+  padding: 5px 5px 1px 2px;
+  margin-top: -10px;
+  background: white;
+  color:black;
+  display: none;
+  transition: all 0.3s ease;
+}
+
+.sidebar .nav-list li.show .sub-menu {
+  display: block;
+}
+
+.sidebar.close .nav-list li .sub-menu {
+  position: absolute;
+  left: 100%;
+  top: -10px;
+  margin-top: 0;
+  padding: 10px 20px;
+  border-radius: 6px 0px 0px 6px;
+  opacity: 0;
+  display: block;
+  pointer-events: none;
+  transition: 0s;
+}
+
+.sidebar.close .nav-list li:hover .sub-menu {
+  top: 0;
+  opacity: 1;
+  pointer-events: auto;
+  transition: all 0.4s ease;
+  color: rgb(201, 226, 236);
+  border-radius: 0px 20px 20px 0px;
+}
+
+.sidebar .nav-list li .sub-menu a {
+  color: black;
+  font-size: 15px;
+  padding: 3px 0;
+  white-space: nowrap;
+  opacity: 0.6;
+  transition: all 0.3s ease;
+}
+
+.sidebar .nav-list li .sub-menu a:hover {
+  opacity: 1;
+}
+
+.sidebar .nav-list li .sub-menu .link-name {
+  display: none;
+}
+
+.sidebar.close .nav-list li .sub-menu .link-name {
+  font-size: 18px;
+  opacity: 1;
+  display: block;
+}
+
+.sidebar .nav-list li .sub-menu.blank {
+  padding: 3px 20px 6px 10px;
+  opacity: 0;
+  pointer-events: none;
+}
+
+.sidebar .nav-list li:hover .sub-menu.blank {
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.home-section {
+  position:relative;
+  top:0;
+   width: 100vh;
+   margin-left: 0;
+   margin-right: 0;
+   box-sizing: content-box;
+  width: calc(100% - 260px);
+  left: 260px;
+  background-color: white;
+  transition: all 0.5s ease;
+  box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+
+.sidebar.close ~ .home-section {
+  left: 78px;
+  width:calc(100% - 78px);
+}
+
+.home-section .home-content {
+  
+  display: flex;
+  height: 60px;
+  align-items: center;
+}
+.card-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  margin-top: 10px;
+  
+  max-height: calc(100vh - 60px); /* Set a maximum height, excluding the height of .home-content */
+  /* Adjust as needed */
+}
+
+.card {
+  /* Your card styles */
+  width: 40%;
+  height:200px; /* Adjust as needed */
+  margin: 10px; /* Adjust as needed */
+  margin-right: 500px;/* Add any other styles you need for your card */
+}
+.home-section .home-content i,
+.home-section .home-content .text {
+  color:black;
+  font-size: 35px;
+ }
+
+.home-section .home-content .text:hover {
+  color:green;
+  border-bottom: 3px solid green;
+}
+
+.home-section .home-content i {
+  margin: 0 15px;
+  cursor: pointer;
+}
+
+.home-section .home-content .text {
+  white-space: nowrap;
+  font-size: 20px;
+  font-weight: 500;
+  text-decoration: none;
+  transition: 0.3s all;
+}
+
+
+
+
+h1 {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+
+
+
+input, textarea {
+  margin-bottom: 10px;
+}
+
+button {
+  padding: 10px;
+  cursor: pointer;
+}
+/*.card{
+  width:100%;
+  margin-bottom: 20px;
+}*/
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+@media (max-width: 400px) {
+  .sidebar.close .nav-list li .sub-menu {
+    display: none;
+  }
+
+  .sidebar {
+    width: 78px;
+  }
+
+  .sidebar.close {
+    width: 0;
+  }
+
+  .home-section {
+    left: 78px;
+    width: calc(100% - 78px);
+    z-index: 100;
+  }
+
+  .sidebar.close ~ .home-section {
+    width: 100%;
+    left: 0;
+  }
+  .card {
+    width: 100%;
+    max-width: none;
+ }
+}
+@media (max-width: 768px) {
+  .sidebar {
+    width: 100%;
+  }
+
+  .home-section {
+    width: 100%;
+    left: 0;
+  }
+
+  .card {
+    width: 100%; /* Adjust as needed for smaller screens */
+    margin-right: 0;
+    flex-direction: row;
+  }
+}
+
+/* Media query for small-sized screens (576px and below) */
+@media (max-width: 576px) {
+  .card {
+    width: 100%;
+    margin-right: 0;
+    flex-direction: row;
+  }
+}
+@media (max-width: 599px) {
+  .card-container {
+    flex-direction:flex; /* Stack cards vertically */
+    align-items: center; /* Center cards */
+  }
+
+  .card {
+    width: 100%; /* Occupy full width */
+    margin-right: 0;
+    flex-direction: row;
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+
+
+
+
+
+
+
+   
+
+ 
